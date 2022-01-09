@@ -1,0 +1,9 @@
+.table-body__loading {
+  position: relative;
+
+  .table-body__loading-container {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+  }
+}
