@@ -4,14 +4,13 @@ import { Table, TableBody } from 'components/tables';
 import { Button } from 'reactstrap';
 import { formatDate } from 'utils/dates';
 
-const heads = ['Title', 'Created at', 'Actions'];
-
 function PostsTable(props) {
   const { data, isLoading, toggleEdit, toggleDelete } = props;
+  const heads = ['Title', 'Created at', 'Actions'];
 
   return (
     <Table heads={heads}>
-      <TableBody isLoading={isLoading}>
+      <TableBody data-testid="posts-table-body" isLoading={isLoading}>
         {data.map((item, index) => {
           const { postId, title, createdAt } = item;
           return (

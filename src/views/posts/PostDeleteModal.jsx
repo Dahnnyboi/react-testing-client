@@ -23,6 +23,7 @@ function PostDeleteModal(props) {
         <Button
           onClick={() => onSubmit(idToDelete)}
           color="danger"
+          data-testid="delete-button"
           className="w-100 mt-3"
         >
           {isDeleting ? (

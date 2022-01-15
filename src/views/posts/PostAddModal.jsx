@@ -9,6 +9,7 @@ import {
   Input,
   Spinner,
   Button,
+  FormFeedback,
 } from 'reactstrap';
 import { formSubmit } from 'utils/forms';
 import PropTypes from 'prop-types';
@@ -38,10 +39,14 @@ function PostAddModal(props) {
             <Input
               type="text"
               name="title"
+              data-testid="title-input"
               defaultValue={title}
               placeholder="Title"
               required
             />
+            <FormFeedback data-testid="title-feedback">
+              Required
+            </FormFeedback>
           </FormGroup>
 
           <FormGroup>
@@ -49,14 +54,19 @@ function PostAddModal(props) {
             <Input
               type="textarea"
               name="message"
+              data-testid="message-input"
               defaultValue={message}
               placeholder="Message"
               required
             />
+            <FormFeedback data-testid="message-feedback">
+              Required
+            </FormFeedback>
           </FormGroup>
 
           <Button
             type="submit"
+            data-testid="submit-button"
             color="primary"
             className="w-100 mt-3"
           >
