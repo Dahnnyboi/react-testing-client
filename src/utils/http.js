@@ -6,7 +6,6 @@ import cookies from './cookies';
 
 const instance = axios.create({
   baseURL: API_URL,
-  withCredentials: true,
 });
 
 instance.interceptors.request.use((config) => {
