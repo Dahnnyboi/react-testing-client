@@ -5,11 +5,7 @@ import styles from './PublicPage.module.scss';
 
 function PublicPage(props) {
   const { children, className } = props;
-  return (
-    <div className={cx(styles['public-page'], className)}>
-      {children}
-    </div>
-  );
+  return <div className={cx(styles['public-page'], className)}>{children}</div>;
 }
 
 PublicPage.propTypes = {

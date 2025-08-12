@@ -25,17 +25,11 @@ function PrivatePageNavbar(props) {
     <Navbar color="secondary" light className={className} {...rest}>
       <Container>
         <NavbarBrand className="mr-auto">React testing</NavbarBrand>
-        <NavbarToggler
-          onClick={() => toggleNavbar()}
-          className="mr-2"
-        />
+        <NavbarToggler onClick={() => toggleNavbar()} className="mr-2" />
         <Collapse isOpen={collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink
-                style={{ cursor: 'pointer' }}
-                onClick={() => logout()}
-              >
+              <NavLink style={{ cursor: 'pointer' }} onClick={() => logout()}>
                 Logout
               </NavLink>
             </NavItem>

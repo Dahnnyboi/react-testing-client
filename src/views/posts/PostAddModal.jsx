@@ -15,8 +15,7 @@ import { formSubmit } from 'utils/forms';
 import PropTypes from 'prop-types';
 
 function PostAddModal(props) {
-  const { data, isOpen, isLoading, isSubmitting, toggle, onSubmit } =
-    props;
+  const { data, isOpen, isLoading, isSubmitting, toggle, onSubmit } = props;
   const { title, message } = data || {};
   const header = data ? 'Edit Post' : 'Add Post';
   const submitText = data ? 'Save changes' : 'Add Post';
@@ -44,9 +43,7 @@ function PostAddModal(props) {
               placeholder="Title"
               required
             />
-            <FormFeedback data-testid="title-feedback">
-              Required
-            </FormFeedback>
+            <FormFeedback data-testid="title-feedback">Required</FormFeedback>
           </FormGroup>
 
           <FormGroup>
@@ -59,9 +56,7 @@ function PostAddModal(props) {
               placeholder="Message"
               required
             />
-            <FormFeedback data-testid="message-feedback">
-              Required
-            </FormFeedback>
+            <FormFeedback data-testid="message-feedback">Required</FormFeedback>
           </FormGroup>
 
           <Button

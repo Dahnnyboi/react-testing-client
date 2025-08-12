@@ -11,8 +11,8 @@ configure({ adapter: new Adapter() });
 
 const waitForComponentToPaint = async (wrapper) => {
   await act(async () => {
-    await new Promise((resolve) => setTimeout(resolve)).catch(
-      (reject) => setTimeout(reject),
+    await new Promise((resolve) => setTimeout(resolve)).catch((reject) =>
+      setTimeout(reject)
     );
     wrapper.update();
   });
@@ -22,7 +22,7 @@ it('should login', async () => {
   const renderedComponent = await mount(
     <AuthProvider>
       <HomeLogin />
-    </AuthProvider>,
+    </AuthProvider>
   );
 
   waitForComponentToPaint(renderedComponent);
@@ -42,7 +42,7 @@ it('show required fields', async () => {
   const renderedComponent = await mount(
     <AuthProvider>
       <HomeLogin />
-    </AuthProvider>,
+    </AuthProvider>
   );
   waitForComponentToPaint(renderedComponent);
 
@@ -54,7 +54,7 @@ it('show required fields', async () => {
   expect(
     renderedComponent
       .text()
-      .includes('Required. This should be a valid email address'),
+      .includes('Required. This should be a valid email address')
   ).toBe(true);
   renderedComponent.unmount();
 });

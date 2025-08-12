@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useState,
-  useContext,
-  useEffect,
-} from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import { authLogin } from 'api/auth';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert2';
@@ -23,7 +18,7 @@ function AuthProvider(props) {
       setAuth(null);
       setIsLoggingIn(null);
     },
-    [],
+    []
   );
 
   async function login(formData) {
@@ -52,9 +47,7 @@ function AuthProvider(props) {
   }
 
   return (
-    <AuthContext.Provider
-      value={{ isAuth, login, logout, isLoggingIn }}
-    >
+    <AuthContext.Provider value={{ isAuth, login, logout, isLoggingIn }}>
       {children}
     </AuthContext.Provider>
   );

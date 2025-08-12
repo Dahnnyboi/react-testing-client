@@ -2,12 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
 import { useAuth } from 'contexts/AuthContext';
-import {
-  Switch,
-  Route,
-  withRouter,
-  Redirect,
-} from 'react-router-dom';
+import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import { PAGE_ACCESS } from 'configs/constants';
 import PropTypes from 'prop-types';
 

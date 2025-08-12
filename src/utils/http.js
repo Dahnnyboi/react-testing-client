@@ -11,9 +11,7 @@ const instance = axios.create({
 instance.interceptors.request.use((config) => {
   if (cookies.get(AUTH_COOKIE_NAME)) {
     // eslint-disable-next-line no-param-reassign
-    config.headers.Authorization = `Bearer ${cookies.get(
-      AUTH_COOKIE_NAME,
-    )}`;
+    config.headers.Authorization = `Bearer ${cookies.get(AUTH_COOKIE_NAME)}`;
   }
 
   return config;
@@ -30,7 +28,7 @@ instance.interceptors.response.use(
     }
 
     return Promise.reject(error);
-  },
+  }
 );
 
 export function parseSearchToObject(search) {

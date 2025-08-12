@@ -14,7 +14,7 @@ function mockComponent(data = {}) {
       isSubmitting={false}
       toggle={toggleMock}
       onSubmit={submitMock}
-    />,
+    />
   );
 
   return {
@@ -44,12 +44,8 @@ it('should require title and message', async () => {
   const submitButton = component.getByTestId('submit-button');
   await fireEvent.click(submitButton);
 
-  const titleFeedback = await component.findByTestId(
-    'title-feedback',
-  );
-  const messageFeedback = await component.findByTestId(
-    'message-feedback',
-  );
+  const titleFeedback = await component.findByTestId('title-feedback');
+  const messageFeedback = await component.findByTestId('message-feedback');
   expect((await titleFeedback).textContent).toEqual('Required');
   expect((await messageFeedback).textContent).toEqual('Required');
 });

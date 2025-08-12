@@ -34,7 +34,7 @@ function mockComponent() {
       isLoading={false}
       toggleEdit={toggleEdit}
       toggleDelete={toggleDelete}
-    />,
+    />
   );
 
   return { component, toggleEdit, toggleDelete };

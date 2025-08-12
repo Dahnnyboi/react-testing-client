@@ -9,9 +9,7 @@ function TableBody(props) {
 
   return isLoading ? (
     <tbody className={cx('w-100', styles['table-body__loading'])}>
-      <Spinner className={styles['table-body__loading-container']}>
-        {' '}
-      </Spinner>
+      <Spinner className={styles['table-body__loading-container']}> </Spinner>
     </tbody>
   ) : (
     <tbody>{children}</tbody>

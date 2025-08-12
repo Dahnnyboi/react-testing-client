@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { getPost, editPost } from 'api/post';
 import swal from 'sweetalert2';
 
@@ -17,7 +17,7 @@ function useEditPost(callback) {
     setItemToEdit({ isOpen: !!idToEdit, id: idToEdit });
   }
 
-  async function getData() {
+  const getData = useCallback(async () => {
     try {
       setIsLoading(true);
       const data = await getPost(id);
@@ -32,7 +32,7 @@ function useEditPost(callback) {
         text: 'Something went wrong',
       });
     }
-  }
+  }, [id]);
 
   async function editData(data) {
     try {
@@ -55,7 +55,7 @@ function useEditPost(callback) {
   useEffect(() => {
     if (id) getData();
     else setDataToEdit({});
-  }, [id]);
+  }, [id, getData]);
 
   return {
     isFetching: isLoading,

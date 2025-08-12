@@ -25,10 +25,7 @@ function PostsTable(props) {
                 >
                   Edit
                 </Button>
-                <Button
-                  color="danger"
-                  onClick={() => toggleDelete(postId)}
-                >
+                <Button color="danger" onClick={() => toggleDelete(postId)}>
                   Delete
                 </Button>
               </th>

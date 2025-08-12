@@ -19,19 +19,10 @@ function HomeLogin() {
     <Card style={{ width: '400px' }}>
       <CardBody>
         <h3>Login</h3>
-        <Form
-          onSubmit={formSubmit(login)}
-          data-testid="login-form"
-          noValidate
-        >
+        <Form onSubmit={formSubmit(login)} data-testid="login-form" noValidate>
           <FormGroup>
             <Label>Email</Label>
-            <Input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
+            <Input type="email" name="email" placeholder="Email" required />
             <FormFeedback>
               Required. This should be a valid email address
             </FormFeedback>
@@ -47,11 +38,7 @@ function HomeLogin() {
             <FormFeedback>Required</FormFeedback>
           </FormGroup>
 
-          <Button
-            type="submit"
-            color="primary"
-            className="w-100 mt-3"
-          >
+          <Button type="submit" color="primary" className="w-100 mt-3">
             {isLoggingIn ? (
               <Spinner size="sm" data-testid="login-spinner">
                 {' '}

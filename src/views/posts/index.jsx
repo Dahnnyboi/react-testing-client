@@ -12,23 +12,11 @@ import PostDeleteModal from './PostDeleteModal';
 
 function Index() {
   const { data, meta, isLoading, onReload } = useGetPost();
-  const { isAddOpen, isAdding, onAdd, toggleAdd } =
-    useAddPost(onReload);
-  const {
-    isFetching,
-    isEditing,
-    dataToEdit,
-    isEditOpen,
-    toggleEdit,
-    onEdit,
-  } = useEditPost(onReload);
-  const {
-    isDeleteOpen,
-    idToDelete,
-    isDeleting,
-    toggleDelete,
-    onDelete,
-  } = useDeletePost(onReload);
+  const { isAddOpen, isAdding, onAdd, toggleAdd } = useAddPost(onReload);
+  const { isFetching, isEditing, dataToEdit, isEditOpen, toggleEdit, onEdit } =
+    useEditPost(onReload);
+  const { isDeleteOpen, idToDelete, isDeleting, toggleDelete, onDelete } =
+    useDeletePost(onReload);
 
   return (
     <PrivatePage>

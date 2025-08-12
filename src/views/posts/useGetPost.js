@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getPosts } from 'api/post';
 import swal from 'sweetalert2';
@@ -9,11 +9,10 @@ function useGetPost() {
   const [data, setData] = useState([]);
   const [meta, setMeta] = useState({});
 
-  async function getData() {
+  const getData = useCallback(async () => {
     try {
       setIsLoading(true);
-      const { data: dataResponse, meta: metaResponse } =
-        await getPosts(search);
+      const { data: dataResponse, meta: metaResponse } = await getPosts(search);
 
       setData(dataResponse);
       setMeta(metaResponse);
@@ -26,11 +25,11 @@ function useGetPost() {
         text: 'Something went wrong',
       });
     }
-  }
+  }, [search]);
 
   useEffect(() => {
     getData();
-  }, [search]);
+  }, [search, getData]);
 
   return { isLoading, data, meta, onReload: getData };
 }

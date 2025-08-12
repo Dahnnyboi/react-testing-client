@@ -14,7 +14,7 @@ function mockComponent() {
       isDeleting={false}
       toggleDelete={toggleFunction}
       onSubmit={submitFunction}
-    />,
+    />
   );
 
   return { submitFunction, toggleFunction, component };

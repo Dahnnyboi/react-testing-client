@@ -1,22 +1,13 @@
 import React from 'react';
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  Button,
-  Spinner,
-} from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, Button, Spinner } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 function PostDeleteModal(props) {
-  const { idToDelete, isOpen, isDeleting, toggleDelete, onSubmit } =
-    props;
+  const { idToDelete, isOpen, isDeleting, toggleDelete, onSubmit } = props;
 
   return (
     <Modal isOpen={isOpen} toggle={toggleDelete}>
-      <ModalHeader toggle={() => toggleDelete()}>
-        Delete Post
-      </ModalHeader>
+      <ModalHeader toggle={() => toggleDelete()}>Delete Post</ModalHeader>
       <ModalBody>
         <p>Are you sure you want to delete this post?</p>
 
