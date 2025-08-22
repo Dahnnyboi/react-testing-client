@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getPosts } from 'api/post';
-import swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 
 function useGetPost() {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,10 +20,7 @@ function useGetPost() {
     } catch (e) {
       setIsLoading(false);
 
-      swal.fire({
-        title: 'Oops',
-        text: 'Something went wrong',
-      });
+      toast.error('Something went wrong!');
     }
   }, [search]);
 

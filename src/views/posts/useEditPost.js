@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { getPost, editPost } from 'api/post';
-import swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 
 function useEditPost(callback) {
   const [itemToEdit, setItemToEdit] = useState({
@@ -27,10 +27,7 @@ function useEditPost(callback) {
     } catch (e) {
       setIsLoading(false);
 
-      swal.fire({
-        title: 'Oops',
-        text: 'Something went wrong',
-      });
+      toast.error('Something went wrong!');
     }
   }, [id]);
 
@@ -45,10 +42,7 @@ function useEditPost(callback) {
     } catch (e) {
       setIsEditing(false);
 
-      swal.fire({
-        title: 'Oops',
-        text: 'Something went wrong',
-      });
+      toast.error('Something went wrong!');
     }
   }
 

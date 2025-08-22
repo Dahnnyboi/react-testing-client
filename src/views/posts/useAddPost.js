@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { addPost as createPost } from 'api/post';
-import swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 
 function useAddPost(callback) {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,10 +21,7 @@ function useAddPost(callback) {
     } catch (e) {
       setIsLoading(false);
 
-      swal.fire({
-        title: 'Oops',
-        text: 'Something went wrong',
-      });
+      toast.error('Something went wrong');
     }
   }
 
